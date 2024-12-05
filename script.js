@@ -30,3 +30,19 @@ Array.from(cells).forEach(element => {
         });
     });
 });
+
+const header = document.querySelector('.header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+        // Scrolling down, hide the header
+        header.classList.add('hidden');
+    } else {
+        // Scrolling up, show the header
+        header.classList.remove('hidden');
+    }
+    lastScrollY = window.scrollY;
+});
+
+
