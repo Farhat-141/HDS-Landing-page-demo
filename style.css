@@ -115,7 +115,7 @@ body{
 }
 @font-face {
     font-family: interm;
-    src: url(FontDesktop/Inter-Medium.otf);
+    src: url(./FontDesktop/Inter-Medium.otf);
 }
 .mainNav-secondary{
     display: flex;
