@@ -6,6 +6,8 @@
     --secondary-background-color:#003d31;
 }
 body{
+        padding-top: 90px; /* Offset for the header's height + margin */
+    
     background-color: var(--secondary-text-color);
     color: var(--primary-text-color);
     font-family: neue;
@@ -28,27 +30,37 @@ body{
     font-family: neuebold;
     src: url(FontDesktop/Inter-SemiBold.otf);
 }
-.header{
-    position: relative;
-    margin: 15px;
-}
-.mainNav-wrapper{
-    display: flex;
-    background-color:var(--primary-background-color);
-    color:#030303;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: 0;
+.header {
+    position: fixed; /* Keeps the header fixed at the top */
+    top: 15px; /* Adjust for the margin */
     left: 0;
-    top: 0;
-    font-family: replica;
-    margin: 20px 0;
-    height: 60px;
-    position: absolute;
-    z-index: 999;
-    width: 100%;
-    align-items: center;
+    width: calc(100% - 30px); /* Adjust width to account for left and right margins */
+    background-color: var(--primary-background-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Smooth hide/show animation */
+    z-index: 1000;
+    margin: 15px; /* Add spacing around the header */
 }
+
+.header.hidden {
+    transform: translateY(-200%); /* Slide the header out of view */
+}
+
+.mainNav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px; /* Add padding for spacing inside the nav */
+    box-sizing: border-box;
+    font-family: replica; /* Ensure this font is loaded */
+    height: 60px;
+    background-color: var(--primary-background-color);
+    color: #030303;
+    z-index: 1000; /* Match header z-index */
+    position: relative;
+    width: 100%;
+}
+
 .mainNav-primary-homepage{
     align-items: center;
 }
